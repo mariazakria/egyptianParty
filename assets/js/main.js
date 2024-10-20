@@ -20,42 +20,42 @@ const countDownDate = new Date("dec 31, 2024 00:00:00").getTime();
 
 var downCounter = setInterval(function () {
 
-  var now = new Date().getTime();
-  var timeleft = countDownDate - now;
+    var now = new Date().getTime();
+    var timeleft = countDownDate - now;
 
-  var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
-  if (days < 9)
-    $('.days').text('0' + days + ' D')
-  else
-    $('.days').text(days + ' D')
+    if (days < 10)
+        $('.days').text('0' + days + ' D');
+    else
+        $('.days').text(days + ' D');
 
-  if (hours < 9)
-    $('.hours').text('0' + hours + ' H')
-  else
-    $('.hours').text(hours + ' H')
+    if (hours < 10)
+        $('.hours').text('0' + hours + ' H');
+    else
+        $('.hours').text(hours + ' H');
 
-  if (minutes < 9)
-    $('.minutes').text('0' + minutes + ' M')
-  else
-    $('.minutes').text(minutes + ' M')
+    if (minutes < 10)
+        $('.minutes').text('0' + minutes + ' M');
+    else
+        $('.minutes').text(minutes + ' M');
 
-  if (seconds < 9)
-    $('#seconds').text('0' + seconds + ' S')
-  else
-    $('#seconds').text(seconds + 'S')
+    if (seconds < 10)
+        $('.second').text('0' + seconds + ' S'); 
+    else
+        $('.second').text(seconds + ' S');
 
-  if (timeleft < 0) {
-    clearInterval(myfunc);
-    document.querySelector(".days").innerHTML = ""
-    document.querySelector(".hours").innerHTML = ""
-    document.querySelector(".mins").innerHTML = ""
-    document.querySelector(".secs").innerHTML = ""
-    document.querySelector(".end").innerHTML = "PARTY TIME!!";
-  }
+    if (timeleft < 0) {
+        clearInterval(downCounter);
+        document.querySelector(".days").innerHTML = "";
+        document.querySelector(".hours").innerHTML = "";
+        document.querySelector(".minutes").innerHTML = "";
+        document.querySelector(".second").innerHTML = ""; 
+        document.querySelector(".end").innerHTML = "PARTY TIME!!";
+    }
 
 }, 1000);
 
