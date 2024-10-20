@@ -88,6 +88,10 @@
       font-size: 20px;
       padding: 20px 8px 20px 32px;
  }
+ i{
+  transition: 500ms ease;
+
+ }
 }
 .closebtn {
   transform: scale(-1);
@@ -97,7 +101,7 @@
       color: #FFF;
  }
 }
-.sidebar a:hover{
+.sidebar a:hover, .sidebar a i:hover{
   color: rgba(214, 46, 51, 0.6);
 }
 .sideNav i{
