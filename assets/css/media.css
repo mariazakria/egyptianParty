@@ -1,0 +1,11 @@
+@media screen and (max-width: 768px) {
+    .count {
+        .container {
+            margin: 0 auto;
+            padding-block: 0.5rem;
+        }
+        .time {
+            padding: 1rem;
+        }
+    }
+}
